@@ -29,8 +29,8 @@ int main()
     
     struct sockaddr_in serv_addr = {};
     serv_addr.sin_family = AF_INET;
-    memcpy(server->h_addr_list[0],
-           &serv_addr.sin_addr.s_addr,
+    memcpy(&serv_addr.sin_addr.s_addr,
+           server->h_addr_list[0],
            server->h_length);
     serv_addr.sin_port = htons(SERVER_PORT);
     
